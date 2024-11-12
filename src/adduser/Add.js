@@ -19,11 +19,11 @@ const Add = () => {
       const {name, value} = e.target;
       setUser({...user, [name]:value});
   }
-  
+
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/api/create", user);
+      const response = await axios.post("https://ini8assigment.onrender.com/api/create", user);
       toast.success(response.data.msg, { position: "top-right" });
       navigate("/");
     } catch (error) {
